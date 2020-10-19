@@ -1,1 +1,21 @@
-<p>table-subestacao-component works!</p>
+<p-table [value]="subestacoes">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th> </th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-subestacao>
+        <tr>
+            <td> {{ subestacao.codigo }} </td>
+            <td> {{ subestacao.nome }} </td>
+            <td>
+                <button pButton title="Excluir" (click)="excluir(subestacao.idSubestacao)">Excluir</button>
+                <button pButton title="Editar">Editar</button>
+                <button pButton title="Exibir mapa">Exibir mapa</button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

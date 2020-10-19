@@ -1,9 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Routes } from '@angular/router';
+
+import { TabMenuModule } from 'primeng/tabmenu';
+import { TableModule } from 'primeng/table';
+import { PanelModule } from 'primeng/panel';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import { DialogModule } from 'primeng/dialog';
+import { DynamicDialogModule, DialogService } from 'primeng/dynamicdialog';
+import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/dynamicdialog';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IncluirComponentComponent } from './component/incluir-component/incluir-component.component';
 import { TableSubestacaoComponentComponent } from './component/table-subestacao-component/table-subestacao-component.component';
 import { TableRedeComponentComponent } from './component/table-rede-component/table-rede-component.component';
 import { SubestacaoComponentComponent } from './component/subestacao-component/subestacao-component.component';
@@ -15,7 +30,6 @@ import { LoginComponentComponent } from './component/login-component/login-compo
 @NgModule({
   declarations: [
     AppComponent,
-    IncluirComponentComponent,
     TableSubestacaoComponentComponent,
     TableRedeComponentComponent,
     SubestacaoComponentComponent,
@@ -26,7 +40,20 @@ import { LoginComponentComponent } from './component/login-component/login-compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+
+    FormsModule,
+    HttpClientModule,
+
+    TabMenuModule,
+    TableModule,
+    PanelModule,
+    InputTextModule,
+    ButtonModule,
+    ToastModule,
+    DialogModule,
+    DynamicDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SubestacaoService } from 'src/app/service/subestacao.service';
 
 @Component({
   selector: 'app-table-subestacao-component',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableSubestacaoComponentComponent implements OnInit {
 
-  constructor() { }
+  subestacao = {};
+  subestacoes = [];
 
-  ngOnInit(): void {
+  constructor(
+    private subestacaoService: SubestacaoService
+  ) { }
+
+  ngOnInit(){
+    this.listar();
   }
 
+  listar(){
+    this.subestacaoService.listar().subscribe(resposta => this.subestacoes = <any> resposta);
+  }
+
+  excluir(idSubestacao: number): void {
+    this.subestacoes = this.subestacoes.filter(h => h !== this.subestacao);
+    this.subestacaoService.excluir(idSubestacao).subscribe();
+  }
 }
