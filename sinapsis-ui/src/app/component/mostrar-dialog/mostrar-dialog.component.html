@@ -1,1 +1,15 @@
-<p>mostrar-dialog works!</p>
+<div class="p-grid">
+    <div class="p-col">
+        {{ dados.mensagem }}
+    </div>
+
+    <div class="p-col" name="adicionar" *ngIf="adicionar">
+        <div class="p-col-6">
+            <button pButton type="submit" label="Adicionar"></button>
+        </div>
+        <div class="p-col-6">
+            <button pButton type="submit" label="Cancelar"></button>
+        </div>
+    </div>
+
+</div>

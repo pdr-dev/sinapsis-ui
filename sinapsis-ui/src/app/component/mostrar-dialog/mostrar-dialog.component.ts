@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { Acao } from 'src/app/model/acao';
 import { SubestacaoService } from 'src/app/service/subestacao.service';
 
 @Component({
@@ -20,17 +21,35 @@ export class MostrarDialogComponent implements OnInit {
   subestacoes = [];
   subestacao = {};
   dados = {};
+  adicionar: boolean;
+  editar: boolean; 
+  excluir: boolean;
 
   ngOnInit(): void {
+    const acao: any = this.config.data.dados.acao;
     this.subestacao = this.config.data.subestacao;
     this.dados = this.config.data.dados;
+
+    if(acao === Acao.ADICIONAR){
+      this.adicionar = true;
+      this.editar = false;
+      this.excluir = false;
+    } else if (acao === Acao.EDITAR) {
+      this.adicionar = false;
+      this.editar = true;
+      this.excluir = false;
+    } else if (acao === Acao.EXCLUIR){
+      this.adicionar = false;
+      this.editar = false;
+      this.excluir = true;
+    }
   }
 
   listar(){
     this.subestacaoService.listar().subscribe(resposta => this.subestacoes = <any> resposta);
   }
 
-  excluir(idSubestacao: number){
+  confirmarExclusao(idSubestacao: number){
     this.subestacoes = this.subestacoes.filter(h => h !== this.subestacao);
     this.subestacaoService.excluir(idSubestacao).subscribe(() => {
       this.subestacao = {};

@@ -30,7 +30,7 @@ export class TableSubestacaoComponentComponent implements OnInit {
 
   confirmarExclusão(subestacao: Subestacao){
     const dados: any = {};
-    dados.botoes = Acao.EXCLUIR;
+    dados.acao = Acao.EXCLUIR;
     dados.mensagem = `Realmente deseja excluir a Subestação com código ${subestacao.codigo}?`;
     const ref = this.dialogService.open(MostrarDialogComponent, {
       data: {
