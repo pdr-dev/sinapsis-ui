@@ -26,6 +26,7 @@ import { RedeComponentComponent } from './component/rede-component/rede-componen
 import { HeaderComponentComponent } from './component/header-component/header-component.component';
 import { MenuComponentComponent } from './component/menu-component/menu-component.component';
 import { LoginComponentComponent } from './component/login-component/login-component.component';
+import { MostrarDialogComponent } from './component/mostrar-dialog/mostrar-dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoginComponentComponent } from './component/login-component/login-compo
     RedeComponentComponent,
     HeaderComponentComponent,
     MenuComponentComponent,
-    LoginComponentComponent
+    LoginComponentComponent,
+    MostrarDialogComponent
   ],
   imports: [
     BrowserModule,

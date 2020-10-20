@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogService } from 'primeng/dynamicdialog';
+import { Acao } from 'src/app/model/acao';
+import { Subestacao } from 'src/app/model/subestacao';
 import { SubestacaoService } from 'src/app/service/subestacao.service';
+import { MostrarDialogComponent } from '../mostrar-dialog/mostrar-dialog.component';
 
 @Component({
   selector: 'app-table-subestacao-component',
@@ -12,7 +16,8 @@ export class TableSubestacaoComponentComponent implements OnInit {
   subestacoes = [];
 
   constructor(
-    private subestacaoService: SubestacaoService
+    private subestacaoService: SubestacaoService,
+    private dialogService: DialogService
   ) { }
 
   ngOnInit(){
@@ -23,8 +28,18 @@ export class TableSubestacaoComponentComponent implements OnInit {
     this.subestacaoService.listar().subscribe(resposta => this.subestacoes = <any> resposta);
   }
 
-  excluir(idSubestacao: number): void {
-    this.subestacoes = this.subestacoes.filter(h => h !== this.subestacao);
-    this.subestacaoService.excluir(idSubestacao).subscribe();
+  confirmarExclusão(subestacao: Subestacao){
+    const dados: any = {};
+    dados.botoes = Acao.EXCLUIR;
+    dados.mensagem = `Realmente deseja excluir a Subestação com código ${subestacao.codigo}?`;
+    const ref = this.dialogService.open(MostrarDialogComponent, {
+      data: {
+        subestacao,
+        dados
+      },
+      header: 'Confirmar exclusão',
+      width: '70%',
+      contentStyle: { "max-height": "350px", "overflow": "auto" }
+    });
   }
 }
