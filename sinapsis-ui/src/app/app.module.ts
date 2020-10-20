@@ -40,14 +40,13 @@ import { MostrarDialogComponent } from './component/mostrar-dialog/mostrar-dialo
     LoginComponentComponent,
     MostrarDialogComponent
   ],
+  entryComponents: [MostrarDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-
     FormsModule,
     HttpClientModule,
-
     TabMenuModule,
     TableModule,
     PanelModule,
@@ -57,7 +56,7 @@ import { MostrarDialogComponent } from './component/mostrar-dialog/mostrar-dialo
     DialogModule,
     DynamicDialogModule
   ],
-  providers: [],
+  providers: [MessageService, DialogService, DynamicDialogRef, DynamicDialogConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

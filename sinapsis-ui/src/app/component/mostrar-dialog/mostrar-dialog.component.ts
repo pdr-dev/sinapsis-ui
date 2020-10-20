@@ -20,15 +20,15 @@ export class MostrarDialogComponent implements OnInit {
 
   subestacoes = [];
   subestacao = {};
-  dados = {};
+  dados: any;
   adicionar: boolean;
   editar: boolean; 
   excluir: boolean;
 
-  ngOnInit(): void {
-    const acao: any = this.config.data.dados.acao;
+  ngOnInit() {
     this.subestacao = this.config.data.subestacao;
     this.dados = this.config.data.dados;
+    const acao: any = this.dados.acao;
 
     if(acao === Acao.ADICIONAR){
       this.adicionar = true;

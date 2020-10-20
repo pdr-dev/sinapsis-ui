@@ -20,15 +20,15 @@ export class TableSubestacaoComponentComponent implements OnInit {
     private dialogService: DialogService
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.listar();
   }
 
-  listar(){
+  listar() {
     this.subestacaoService.listar().subscribe(resposta => this.subestacoes = <any> resposta);
   }
 
-  confirmarExclusão(subestacao: Subestacao){
+  confirmarExclusao(subestacao: Subestacao) {
     const dados: any = {};
     dados.acao = Acao.EXCLUIR;
     dados.mensagem = `Realmente deseja excluir a Subestação com código ${subestacao.codigo}?`;
