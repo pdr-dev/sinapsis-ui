@@ -1,0 +1,27 @@
+.background {
+    margin: 0 auto;
+    width: 95%;
+    height: 520px;
+    background-image: url('../../../assets/img/electric-grid.jpg');
+    background-size: 100% 100%;
+}
+
+.box-login {
+    margin-top: 400px;
+    margin-right: 0.5%;
+    float: right;
+    background-color: lightgray;
+    width: 30%;
+    height: 40%;
+    border: 1px solid black;
+}
+
+p {
+    font-size: large;
+    text-align: right;
+}
+
+#button-entrar {
+    margin-top: 1%;
+    float: right;
+}

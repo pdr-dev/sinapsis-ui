@@ -39,7 +39,7 @@ import { MostrarDialogComponent } from './component/mostrar-dialog/mostrar-dialo
     LoginComponentComponent,
     MostrarDialogComponent
   ],
-  entryComponents: [MostrarDialogComponent],
+  entryComponents: [MostrarDialogComponent, HeaderComponentComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

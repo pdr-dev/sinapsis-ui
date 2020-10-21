@@ -1,0 +1,13 @@
+.box {
+    margin: 0 auto;
+    margin-top: 5%;
+    background-color: lightgray;
+    width: 95%;
+    border: 1px solid black;
+}
+
+p {
+    text-align: right;
+    font-size: xx-large;
+    padding-right: 1%;
+}
