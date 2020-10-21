@@ -21,6 +21,7 @@ export class TableSubestacaoComponentComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.subestacoes = [];
     this.listar();
   }
 
@@ -38,8 +39,14 @@ export class TableSubestacaoComponentComponent implements OnInit {
         dados
       },
       header: 'Confirmar exclusão',
-      width: '70%',
-      contentStyle: { "max-height": "350px", "overflow": "auto" }
+      width: '40%',
+      contentStyle: { "max-height": "250px", "overflow": "auto" }
     });
+
+    ref.onClose.subscribe(res => {
+      this.subestacoes = this.subestacoes.filter(h => h !== this.subestacao);
+      this.subestacao = {};
+      this.listar();      
+    })
   }
 }

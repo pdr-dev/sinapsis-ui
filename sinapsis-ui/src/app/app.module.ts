@@ -16,7 +16,6 @@ import { DialogModule } from 'primeng/dialog';
 import { DynamicDialogModule, DialogService } from 'primeng/dynamicdialog';
 import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/dynamicdialog';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableSubestacaoComponentComponent } from './component/table-subestacao-component/table-subestacao-component.component';

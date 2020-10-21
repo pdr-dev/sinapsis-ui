@@ -3,7 +3,7 @@
         <tr>
             <th>Código</th>
             <th>Nome</th>
-            <th> </th>
+            <th> Ações </th>
         </tr>
     </ng-template>
 
@@ -12,9 +12,9 @@
             <td> {{ subestacao.codigo }} </td>
             <td> {{ subestacao.nome }} </td>
             <td>
-                <button pButton title="Excluir" (click)="confirmarExclusao(subestacao)">Excluir</button>
-                <button pButton title="Editar">Editar</button>
-                <button pButton title="Exibir mapa">Exibir mapa</button>
+                <button pButton icon="pi pi-trash" iconPos="left" title="Excluir" (click)="confirmarExclusao(subestacao)"></button> &nbsp;
+                <button pButton icon="pi pi-pencil" iconPos="left" title="Editar"></button> &nbsp;
+                <button pButton icon="pi pi-eye" iconPos="left" title="Exibir mapa" label="Exibir mapa"></button>
             </td>
         </tr>
     </ng-template>

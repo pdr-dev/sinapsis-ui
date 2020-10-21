@@ -18,7 +18,6 @@ export class MostrarDialogComponent implements OnInit {
     public config: DynamicDialogConfig
   ) { }
 
-  subestacoes = [];
   subestacao = {};
   dados: any;
   adicionar: boolean;
@@ -45,16 +44,8 @@ export class MostrarDialogComponent implements OnInit {
     }
   }
 
-  listar(){
-    this.subestacaoService.listar().subscribe(resposta => this.subestacoes = <any> resposta);
-  }
-
   confirmarExclusao(idSubestacao: number){
-    this.subestacoes = this.subestacoes.filter(h => h !== this.subestacao);
     this.subestacaoService.excluir(idSubestacao).subscribe(() => {
-      this.subestacao = {};
-      this.listar();
-
       this.messageService.add({
         severity: 'sucess',
         summary: 'Subestação excluída com sucesso.'

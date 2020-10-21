@@ -1,15 +1,31 @@
 <div class="p-grid">
-    <div class="p-col">
+    <div class="p-col-12">
         {{ dados.mensagem }}
     </div>
 
-    <div class="p-col" name="adicionar" *ngIf="adicionar">
-        <div class="p-col-6">
-            <button pButton type="submit" label="Adicionar"></button>
-        </div>
-        <div class="p-col-6">
-            <button pButton type="submit" label="Cancelar"></button>
-        </div>
-    </div>
+    <table>
+        <tr>
+            <div class="row" name="adicionar" *ngIf="adicionar">
 
+                <button pButton type="submit" label="Adicionar"></button>
+
+
+                <button pButton type="submit" label="Cancelar"></button>
+
+            </div>
+
+            <div class="row" name="editar" *ngIf="editar">
+
+                <button pButton type="submit" label="Concluir"></button>
+
+                <button pButton type="submit" label="Cancelar"></button>
+
+            </div>
+            <div name="excluir" *ngIf="excluir">
+                <td>
+                    <button pButton type="submit" label="Confirmar" (click)="confirmarExclusao(subestacao.idSubestacao)"></button></td>
+                <td><button pButton type="submit" label="Cancelar"></button></td>
+            </div>
+        </tr>
+    </table>
 </div>
