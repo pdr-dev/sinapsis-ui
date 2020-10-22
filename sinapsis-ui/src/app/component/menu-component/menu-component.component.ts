@@ -12,11 +12,8 @@ export class MenuComponentComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-      { label: 'Home' },
+      { label: 'Home', url: '/subestacoes' },
       { label: 'Subestação' },
-      { label: 'Inclusão' },
-      { label: 'Alteração' },
-      { label: 'Visualização' }
     ];
   }
 }

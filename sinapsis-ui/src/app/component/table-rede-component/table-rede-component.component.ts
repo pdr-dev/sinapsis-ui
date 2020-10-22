@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
+import { Table } from 'primeng/table';
 import { Acao } from 'src/app/model/acao';
 import { Rede } from 'src/app/model/rede';
+import { Subestacao } from 'src/app/model/subestacao';
 import { RedeService } from 'src/app/service/rede.service';
+import { SubestacaoService } from 'src/app/service/subestacao.service';
 import { MostrarDialogComponent } from '../mostrar-dialog/mostrar-dialog.component';
 
 @Component({
@@ -12,20 +15,28 @@ import { MostrarDialogComponent } from '../mostrar-dialog/mostrar-dialog.compone
 })
 export class TableRedeComponentComponent implements OnInit {
 
+  @Input() subestacao: any = null;
   rede = {};
   redes = [];
+
   constructor(
     private redeService: RedeService,
     private dialogService: DialogService
   ) { }
 
   ngOnInit() {
-    this.redes = [];
-    this.listar();
   }
 
-  listar() {
-    this.redeService.listar().subscribe(resposta => this.redes = <any> resposta);
+  ngOnChanges(subestacao: SimpleChanges) {
+    console.log('mudou ' + subestacao.subestacao.currentValue.codigo);
+    this.subestacao= subestacao.subestacao.currentValue;
+    this.atualizar();
+  }
+
+  atualizar() {
+    console.log('at: ' + this.subestacao.codigo);
+    if(this.subestacao.codigo != null)
+      this.redeService.buscarPorSubestacao(this.subestacao).subscribe(resposta => this.redes = <any> resposta);
   }
 
   confirmarExclusao(rede: Rede) {
@@ -43,9 +54,8 @@ export class TableRedeComponentComponent implements OnInit {
     });
 
     ref.onClose.subscribe(res => {
-      this.redes = this.redes.filter(h => h !== this.rede);
       this.rede = {};
-      this.listar();      
+      this.atualizar();      
     })
   }
 

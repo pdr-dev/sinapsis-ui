@@ -10,7 +10,7 @@ import { Subestacao } from '../model/subestacao';
 })
 export class RedeService {
 
-    apiUrl = "http://localhost:8080/redes/";
+    apiUrl = "http://localhost:8080/redes";
 
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -30,7 +30,7 @@ export class RedeService {
 
     buscarPorSubestacao(subestacao: Subestacao): Observable<Rede>{
         const path = "subestacao";
-        const url = `${this.apiUrl}/${path}/${subestacao}`;
+        const url = `${this.apiUrl}/${path}/${subestacao.codigo}`;
         return this.httpClient.get<Rede>(url, this.httpOptions);
     }
 

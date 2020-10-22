@@ -5,19 +5,19 @@
         <div class="p-grid">
             <div class="p-col-2">Código:</div>
             <div class="p-col-10">
-                <input pInputText style="width: 10%;" type="text" />
+                <input pInputText style="width: 10%;" type="text" [(ngModel)]="subestacao.codigo" />
             </div>
             <div class="p-col-2">Nome:</div>
             <div class="p-col-10">
-                <input pInputText style="width: 100%;" type="text" />
+                <input pInputText style="width: 100%;" type="text" [(ngModel)]="subestacao.nome" />
             </div>
             <div class="p-col-2">Latitude:</div>
             <div class="p-col-10">
-                <input pInputText style="width: 30%;" type="text" />
+                <input pInputText style="width: 30%;" type="text" [(ngModel)]="subestacao.latitude" />
             </div>
             <div class="p-col-2">Longitude:</div>
             <div class="p-col-10">
-                <input pInputText style="width: 30%;" type="text" />
+                <input pInputText style="width: 30%;" type="text" [(ngModel)]="subestacao.longitude" />
             </div>
         </div>
     </p-fieldset>
@@ -26,19 +26,9 @@
 <div class="fieldset">
     <p-fieldset>
         <p-header>Rede MT</p-header>
-        <div class="p-grid">
-            <div class="p-col-2">Código:</div>
-            <div class="p-col-10">
-                <input pInputText style="width: 10%;" type="text" />
-            </div>
-            <div class="p-col-2">Nome:</div>
-            <div class="p-col-10">
-                <input pInputText style="width: 100%;" type="text" />
-            </div>
-        </div>
-        <button pButton id="button-incluir" class="p-button-outlined" icon="pi pi-plus" iconPos="left" title="Adicionar" label="Adicionar"></button>
-        <app-table-rede-component></app-table-rede-component>
+        <app-rede-incluir [subestacao]="subestacao"></app-rede-incluir>
+        <app-table-rede-component [subestacao]="subestacao"></app-table-rede-component>
     </p-fieldset>
 </div>
-<button pButton id="button" class="p-button-outlined" icon="pi pi-plus" iconPos="left" title="Incluir" label="Incluir"></button>
+<button pButton id="button" class="p-button-outlined" icon="pi pi-plus" iconPos="left" title="Incluir" label="Incluir" (click)="incluir()"></button>
 <button pButton id="button" class="p-button-outlined" icon="pi pi-plus" iconPos="left" title="Cancelar" label="Cancelar"></button>

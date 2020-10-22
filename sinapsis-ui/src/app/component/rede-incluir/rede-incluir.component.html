@@ -1,0 +1,11 @@
+<div class="p-grid">
+    <div class="p-col-2">Código:</div>
+    <div class="p-col-10">
+        <input pInputText style="width: 10%;" type="text" [(ngModel)]="rede.codigo" />
+    </div>
+    <div class="p-col-2">Nome:</div>
+    <div class="p-col-10">
+        <input pInputText style="width: 100%;" type="text" [(ngModel)]="rede.nome" />
+    </div>
+    <button pButton id="button-incluir" class="p-button-outlined" icon="pi pi-plus" iconPos="left" title="Adicionar" label="Adicionar" (click)="incluir()"></button>
+</div>
