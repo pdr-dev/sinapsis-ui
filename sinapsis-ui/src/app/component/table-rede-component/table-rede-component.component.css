@@ -1,0 +1,14 @@
+.table {
+    margin: 0 auto;
+    margin-top: 3%;
+    width: 100%;
+}
+
+p {
+    font-size: large;
+}
+
+#button-incluir {
+    margin-top: 1%;
+    float: right;
+}

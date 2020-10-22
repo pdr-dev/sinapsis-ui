@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RedeComponentComponent } from './rede-component.component';
+import { RedeEditarComponent } from './rede-editar.component';
 
-describe('RedeComponentComponent', () => {
-  let component: RedeComponentComponent;
-  let fixture: ComponentFixture<RedeComponentComponent>;
+describe('RedeEditarComponent', () => {
+  let component: RedeEditarComponent;
+  let fixture: ComponentFixture<RedeEditarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RedeComponentComponent ]
+      declarations: [ RedeEditarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RedeComponentComponent);
+    fixture = TestBed.createComponent(RedeEditarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,1 +1,22 @@
-<p>table-rede-component works!</p>
+<div class="table">
+    <p>Redes</p>
+    <p-table [value]="redes">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 25%;">Código</th>
+                <th style="width: 60%;">Nome</th>
+                <th style="width: 15%;"></th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-rede>
+            <tr>
+                <td> {{ rede.codigo }} </td>
+                <td> {{ rede.nome }} </td>
+                <td>
+                    <button pButton class="p-button-outlined" icon="pi pi-trash" iconPos="left" title="Excluir"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

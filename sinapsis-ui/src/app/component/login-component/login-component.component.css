@@ -1,19 +1,23 @@
 .background {
     margin: 0 auto;
     width: 95%;
-    height: 520px;
+    height: 530px;
     background-image: url('../../../assets/img/electric-grid.jpg');
     background-size: 100% 100%;
 }
 
 .box-login {
-    margin-top: 400px;
+    margin-top: 335px;
     margin-right: 0.5%;
     float: right;
     background-color: lightgray;
     width: 30%;
-    height: 40%;
+    height: 35%;
     border: 1px solid black;
+}
+
+.table-login {
+    margin-top: 10%;
 }
 
 p {

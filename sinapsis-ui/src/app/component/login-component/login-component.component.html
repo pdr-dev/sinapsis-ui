@@ -2,25 +2,22 @@
 
 <div class="background">
     <div class="box-login">
-
-        <div class="row">
-            <div class="p-col-4">
-                <p>Usuário:</p>
-            </div>
-            <div class="p-col-8">
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="p-col-4">
-                <p>Senha:</p>
-            </div>
-            <div class="p-col-8">
-
-            </div>
-        </div>
-
-        <button pButton id="button-entrar" class="p-button-outlined" icon="pi pi-plus" iconPos="left" title="Entrar" label="Entrar"></button>
-
+        <table class="table-login">
+            <tr>
+                <td style="width: 20%;"></td>
+                <td style="width: 30%;">Usuário:</td>
+                <td style="width: 50%;"><input pInputText type="text" /></td>
+            </tr>
+            <tr>
+                <td style="width: 20%;"></td>
+                <td style="width: 30%;">Senha:</td>
+                <td style="width: 50%;"><input pInputText type="text" /></td>
+            </tr>
+            <tr>
+                <td style="width: 20%;"></td>
+                <td style="width: 30%;"></td>
+                <td style="width: 50%;"><button pButton id="button-entrar" class="p-button-outlined" icon="pi pi-plus" iconPos="left" title="Entrar" label="Entrar" (click)="goToHome()"></button></td>
+            </tr>
+        </table>
     </div>
 </div>

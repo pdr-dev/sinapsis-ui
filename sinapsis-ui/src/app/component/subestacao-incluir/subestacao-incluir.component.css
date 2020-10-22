@@ -1,0 +1,18 @@
+.fieldset {
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 1%;
+}
+
+#button-incluir {
+    margin-top: 1%;
+    float: right;
+}
+
+#button {
+    margin-top: 1%;
+    margin-bottom: 5%;
+    margin-right: 3%;
+    float: right;
+    ;
+}
